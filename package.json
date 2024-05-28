@@ -1,0 +1,45 @@
+{
+  "name": "teamtask",
+  "version": "1.17.2",
+  "private": true,
+  "scripts": {
+    "client:start": "npm start --prefix client",
+    "server:start": "npm start --prefix server"
+  },
+  "lint-staged": {
+    "client/**/*.{js,jsx}": [
+      "npm run client:lint"
+    ],
+    "server/**/*.js": [
+      "npm run server:lint"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
+    "extends": [
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "no-undef": "off",
+      "prettier/prettier": "error"
+    }
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5"
+  }
+}
